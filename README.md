@@ -101,14 +101,6 @@ python -m analysis_specialize.main \
 Large MoE models require sufficient GPU memory and may need Hugging Face access
 permissions depending on the model.
 
-## Main Outputs
-
-For each domain, the pipeline saves token classifications and expert importance
-scores:
-
-```text
-output/<run_name>/<model_name>/<domain>_trend_results_importance_weighted_scores.json
-```
 
 ## Citation
 
