@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+
+output/
+logs/
+*.log
+*.out
+*.err
+
+.DS_Store
+.ipynb_checkpoints/

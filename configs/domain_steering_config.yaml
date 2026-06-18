@@ -1,0 +1,27 @@
+# Domain steering configuration.
+#
+# Run analysis_specialize.main first to produce expert score files, then point
+# expert_scores_path to that output directory.
+
+model_name: "microsoft/Phi-tiny-MoE-instruct"
+device: "auto"
+
+expert_scores_path: "output/sample_run"
+data_path: "data/sample_mcqa.jsonl"
+domains:
+  - biology
+
+sample_percentage: 100.0
+max_samples_per_domain: 20
+random_seed: 42
+max_sequence_length: 512
+
+# multiplicative strength 0.10 means selected experts receive +log(1.10)
+# router-logit bias, approximately a 10% probability multiplier before
+# renormalization.
+steering_strength: 0.10
+steering_mode: "multiplicative"
+top_k_experts: 10
+
+output_dir: "output/domain_steering"
+verbose: true

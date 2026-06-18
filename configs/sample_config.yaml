@@ -1,0 +1,23 @@
+# Minimal expert-discovery smoke-test configuration.
+#
+# Set data_path to a JSON/JSONL file for real experiments. If data_path is null
+# and no local src.data loader is available, the code uses placeholder examples.
+
+model_name: "microsoft/Phi-tiny-MoE-instruct"
+device: "auto"
+
+data_path: null
+domains:
+  - biology
+
+sample_percentage: 100.0
+max_samples_per_domain: 2
+random_seed: 42
+
+importance_threshold: 15.0
+max_sequence_length: 512
+
+output_dir: "output/sample_run"
+save_expert_scores: true
+save_token_classifications: true
+verbose: true

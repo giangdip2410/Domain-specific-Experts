@@ -1,0 +1,7 @@
+torch
+transformers
+accelerate
+numpy
+PyYAML
+tqdm
+nltk
