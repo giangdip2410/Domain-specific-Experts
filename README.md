@@ -17,9 +17,6 @@ data/sample_mcqa.jsonl    Tiny MCQA smoke-test data
 requirements.txt          Python dependencies
 ```
 
-Generated job scripts, logs, model-specific output text files, and Python cache
-files are intentionally excluded from the public release.
-
 ## Installation
 
 ```bash
