@@ -42,7 +42,7 @@ Accepted aliases are `category`, `subject`, or `field` for `domain`, and
 local `src.data` loader used in internal experiments. If that is unavailable,
 it uses tiny placeholder examples for smoke testing only.
 
-## Run The Sample
+## Domain Steering
 
 ```bash
 bash run_sample.sh
@@ -61,28 +61,6 @@ The sample config uses a small MoE model and two placeholder examples when no
 dataset is configured. Outputs are written to `output/sample_run/` and
 `output/domain_steering/`.
 
-## Domain Steering
-
-After expert discovery writes the per-domain expert score files, run domain
-steering:
-
-```bash
-python -m analysis_specialize.domain_steering --config configs/domain_steering_config.yaml
-```
-
-This stage loads the top `top_k_experts` experts for each domain from the saved
-weighted score files, applies a router-logit bias to those experts during
-inference, and compares baseline MCQA accuracy with domain-steered accuracy.
-Configure it in:
-
-```text
-configs/domain_steering_config.yaml
-```
-
-For real experiments, set `expert_scores_path` to the expert discovery output
-directory, set `top_k_experts` to the number of experts to steer per domain,
-and set `data_path` to an evaluation JSON/JSONL file with `domain`, `question`,
-`options`, and `answer` fields.
 
 ## Run With Your Data
 
